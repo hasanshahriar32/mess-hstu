@@ -48,7 +48,7 @@ model mess_groups {
   address        String?
   amenities      Json     @default("[]")
   images         Json     @default("[]")
-  owner_id       Int      @map("owner_id")
+  owner_id       Int?     @map("owner_id")
   is_active      Boolean  @default(true) @map("is_active")
   rating         Int      @default(0)
   single_seats   Int      @default(0) @map("single_seats")
@@ -57,7 +57,7 @@ model mess_groups {
   double_price   Float    @default(0) @map("double_price")
   created_at     DateTime @default(now()) @map("created_at")
   updated_at     DateTime @default(now()) @updatedAt @map("updated_at")
-  owner          users     @relation(fields: [owner_id], references: [id])
+  owner          users?    @relation(fields: [owner_id], references: [id])
   bookings       bookings[]
   orders         orders[]
 }
