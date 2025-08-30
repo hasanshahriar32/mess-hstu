@@ -11,9 +11,9 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   keywords: ['HSTU', 'mess', 'accommodation', 'students', 'hostel', 'bangladesh'],
   authors: [
-    { name: 'Ashikul Islam' },
+    { name: 'Shahriar Hasan' },
   ],
-  creator: 'Ashikul Islam',
+  creator: 'Shahriar Hasan',
   publisher: 'HSTU Mess Finder',
   formatDetection: {
     email: false,

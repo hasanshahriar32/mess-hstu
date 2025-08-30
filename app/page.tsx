@@ -562,7 +562,7 @@ export default function HomePage() {
 						<p className="text-slate-500">
 							Developed with{" "}
 							<Heart className="w-4 h-4 inline text-red-400" /> by{" "}
-							<span className="text-orange-400 font-medium">Ashikul Islam</span>
+							<span className="text-orange-400 font-medium">Shahriar Hasan</span>
 						</p>
 					</div>
 				</div>

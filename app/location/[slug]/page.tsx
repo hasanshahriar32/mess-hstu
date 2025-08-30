@@ -784,7 +784,7 @@ function LocationPageClient({ slug }: { slug: string }) {
           <Separator className="bg-slate-700 mb-6" />
           <p className="text-slate-400 mb-2">&copy; 2025 HSTU Mess Finder. All rights reserved.</p>
           <p className="text-slate-500">
-            Developed with ❤️ by <span className="text-orange-400 font-medium">Ashikul Islam</span>
+            Developed with ❤️ by <span className="text-orange-400 font-medium">Shahriar Hasan</span>
           </p>
         </div>
       </footer>
