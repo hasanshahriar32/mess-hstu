@@ -43,10 +43,6 @@ model mess_groups {
   price_per_month Float   @map("price_per_month")
   capacity       Int
   available_seats Int     @map("available_seats")
-  singleSeats    Int      @default(0)
-  singlePrice    Float    @default(0)
-  doubleSeats    Int      @default(0)
-  doublePrice    Float    @default(0)
   contact_phone  String?  @map("contact_phone")
   contact_email  String?  @map("contact_email")
   address        String?
@@ -55,6 +51,10 @@ model mess_groups {
   owner_id       Int      @map("owner_id")
   is_active      Boolean  @default(true) @map("is_active")
   rating         Int      @default(0)
+  single_seats   Int      @default(0) @map("single_seats")
+  single_price   Float    @default(0) @map("single_price")
+  double_seats   Int      @default(0) @map("double_seats")
+  double_price   Float    @default(0) @map("double_price")
   created_at     DateTime @default(now()) @map("created_at")
   updated_at     DateTime @default(now()) @updatedAt @map("updated_at")
   owner          users     @relation(fields: [owner_id], references: [id])
@@ -68,8 +68,8 @@ model bookings {
   user_id     Int      @map("user_id")
   mess_group_id Int    @map("mess_group_id")
   booking_date DateTime @default(now()) @map("booking_date")
-  start_date  DateTime @map("start_date")
-  end_date    DateTime? @map("end_date")
+  start_date  DateTime @db.Date @map("start_date")
+  end_date    DateTime? @db.Date @map("end_date")
   status      String   @default("pending")
   total_amount Float?  @map("total_amount")
   notes       String?
