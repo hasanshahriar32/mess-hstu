@@ -5,7 +5,7 @@
   "prisma": {},
   "scripts": {
     "build": "next build",
-    "postinstall": "prisma generate && prisma migrate && prisma db push",
+    "postinstall": "prisma generate && prisma migrate && prisma db push && npx erd",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
@@ -15,7 +15,8 @@
     "prisma:push": "prisma db push",
     "prisma:studio": "prisma studio --port 10000",
     "db:migrate": "prisma migrate dev",
-    "db:generate": "prisma generate"
+    "db:generate": "prisma generate",
+    "erd": "prisma-erd prisma/schema.prisma public"
   },
   "dependencies": {
     "@ducanh2912/next-pwa": "^10.2.9",
@@ -63,7 +64,6 @@
     "next": "15.2.4",
     "next-themes": "latest",
     "prisma": "^6.15.0",
-    "prisma-erd-generator": "^2.0.4",
     "react": "^19",
     "react-day-picker": "latest",
     "react-dom": "^19",
@@ -82,6 +82,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "postcss": "^8.5",
+    "prisma-erd": "^0.1.1",
     "tailwindcss": "^3.4.17",
     "tsx": "^4.20.5",
     "typescript": "^5"
