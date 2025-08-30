@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ea580c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="buildingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#bgGradient)" stroke="#b91c1c" stroke-width="8"/>
+  
+  <!-- Building Base -->
+  <rect x="120" y="280" width="120" height="140" fill="url(#buildingGradient)" stroke="#64748b" stroke-width="2" rx="4"/>
+  <rect x="272" y="280" width="120" height="140" fill="url(#buildingGradient)" stroke="#64748b" stroke-width="2" rx="4"/>
+  
+  <!-- Building Roofs -->
+  <polygon points="120,280 180,230 240,280" fill="#7c3aed" stroke="#5b21b6" stroke-width="2"/>
+  <polygon points="272,280 332,230 392,280" fill="#7c3aed" stroke="#5b21b6" stroke-width="2"/>
+  
+  <!-- Windows -->
+  <rect x="135" y="300" width="20" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  <rect x="165" y="300" width="20" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  <rect x="195" y="300" width="20" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  
+  <rect x="135" y="330" width="20" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  <rect x="165" y="330" width="20" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  <rect x="195" y="330" width="20" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  
+  <rect x="135" y="360" width="20" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  <rect x="165" y="360" width="20" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  <rect x="195" y="360" width="20" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  
+  <!-- Second Building Windows -->
+  <rect x="287" y="300" width="20" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  <rect x="317" y="300" width="20" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  <rect x="347" y="300" width="20" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  
+  <rect x="287" y="330" width="20" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  <rect x="317" y="330" width="20" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  <rect x="347" y="330" width="20" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  
+  <rect x="287" y="360" width="20" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  <rect x="317" y="360" width="20" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  <rect x="347" y="360" width="20" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  
+  <!-- Doors -->
+  <rect x="170" y="390" width="30" height="30" fill="#8b5cf6" stroke="#6d28d9" stroke-width="2" rx="2"/>
+  <rect x="322" y="390" width="30" height="30" fill="#8b5cf6" stroke="#6d28d9" stroke-width="2" rx="2"/>
+  
+  <!-- Door handles -->
+  <circle cx="190" cy="405" r="2" fill="#fbbf24"/>
+  <circle cx="332" cy="405" r="2" fill="#fbbf24"/>
+  
+  <!-- Search/Location Pin -->
+  <circle cx="256" cy="160" r="35" fill="#10b981" stroke="#047857" stroke-width="3"/>
+  <circle cx="256" cy="160" r="15" fill="#ffffff"/>
+  
+  <!-- Text -->
+  <text x="256" y="480" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">HSTU MESS</text>
+</svg>

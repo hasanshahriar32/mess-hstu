@@ -1,0 +1,53 @@
+{
+  "name": "HSTU Mess Finder",
+  "short_name": "MessFinder",
+  "description": "Find and manage mess accommodations near HSTU campus.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#ea580c",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["education", "utilities"],
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Browse Locations",
+      "short_name": "Browse",
+      "description": "Browse all mess locations",
+      "url": "/",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Login",
+      "short_name": "Login",
+      "description": "Login to your account",
+      "url": "/owner/login",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "96x96" }]
+    }
+  ]
+}
