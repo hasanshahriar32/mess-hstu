@@ -22,12 +22,12 @@ model users {
   name        String
   email       String   @unique
   mobile      String?
-  passwordHash String
+  password_hash String  @map("password_hash")
   role        String   @default("user")
-  isActive    Boolean  @default(true)
-  isApproved  Boolean  @default(false)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  is_active   Boolean  @default(true) @map("is_active")
+  is_approved Boolean  @default(false) @map("is_approved")
+  created_at  DateTime @default(now()) @map("created_at")
+  updated_at  DateTime @updatedAt @map("updated_at")
   messGroups  mess_groups[]
   bookings    bookings[]
   orders      orders[]
@@ -40,24 +40,24 @@ model mess_groups {
   description    String?
   location       String
   category       String
-  pricePerMonth  Float
+  price_per_month Float   @map("price_per_month")
   capacity       Int
-  availableSeats Int
+  available_seats Int     @map("available_seats")
   singleSeats    Int      @default(0)
   singlePrice    Float    @default(0)
   doubleSeats    Int      @default(0)
   doublePrice    Float    @default(0)
-  contactPhone   String?
-  contactEmail   String?
+  contact_phone  String?  @map("contact_phone")
+  contact_email  String?  @map("contact_email")
   address        String?
   amenities      Json     @default("[]")
   images         Json     @default("[]")
-  ownerId        Int
-  isActive       Boolean  @default(true)
+  owner_id       Int      @map("owner_id")
+  is_active      Boolean  @default(true) @map("is_active")
   rating         Int      @default(0)
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
-  owner          users     @relation(fields: [ownerId], references: [id])
+  created_at     DateTime @default(now()) @map("created_at")
+  updated_at     DateTime @updatedAt @map("updated_at")
+  owner          users     @relation(fields: [owner_id], references: [id])
   bookings       bookings[]
   orders         orders[]
 }
@@ -65,43 +65,43 @@ model mess_groups {
 // Booking model
 model bookings {
   id          Int      @id @default(autoincrement())
-  userId      Int
-  messGroupId Int
-  bookingDate DateTime @default(now())
-  startDate   DateTime
-  endDate     DateTime?
+  user_id     Int      @map("user_id")
+  mess_group_id Int    @map("mess_group_id")
+  booking_date DateTime @default(now()) @map("booking_date")
+  start_date  DateTime @map("start_date")
+  end_date    DateTime? @map("end_date")
   status      String   @default("pending")
-  totalAmount Float?
+  total_amount Float?  @map("total_amount")
   notes       String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  user        users     @relation(fields: [userId], references: [id])
-  messGroup   mess_groups @relation(fields: [messGroupId], references: [id])
+  created_at  DateTime @default(now()) @map("created_at")
+  updated_at  DateTime @updatedAt @map("updated_at")
+  user        users     @relation(fields: [user_id], references: [id])
+  messGroup   mess_groups @relation(fields: [mess_group_id], references: [id])
 }
 
 // Order model
 model orders {
   id          Int      @id @default(autoincrement())
-  userId      Int
-  messGroupId Int
-  roomType    String   @default("single")
+  user_id     Int      @map("user_id")
+  mess_group_id Int    @map("mess_group_id")
+  room_type   String   @default("single") @map("room_type")
   status      String   @default("pending")
-  createdAt   DateTime @default(now())
-  user        users     @relation(fields: [userId], references: [id])
-  messGroup   mess_groups @relation(fields: [messGroupId], references: [id])
+  created_at  DateTime @default(now()) @map("created_at")
+  user        users     @relation(fields: [user_id], references: [id])
+  messGroup   mess_groups @relation(fields: [mess_group_id], references: [id])
   transactions transactions[]
 }
 
 // Transaction model
 model transactions {
   id                   Int      @id @default(autoincrement())
-  orderId              Int
+  order_id             Int      @map("order_id")
   amount               Float
   currency             String   @default("BDT")
   status               String   @default("pending")
-  paymentMethod        String?
-  stripePaymentIntentId String?
-  createdAt            DateTime @default(now())
-  updatedAt            DateTime @updatedAt
-  order                orders    @relation(fields: [orderId], references: [id])
+  payment_method       String?  @map("payment_method")
+  stripe_payment_intent_id String? @map("stripe_payment_intent_id")
+  created_at           DateTime @default(now()) @map("created_at")
+  updated_at           DateTime @updatedAt @map("updated_at")
+  order                orders    @relation(fields: [order_id], references: [id])
 }
