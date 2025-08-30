@@ -5,7 +5,7 @@
   "prisma": {},
   "scripts": {
     "build": "next build",
-    "postinstall": "prisma generate && prisma migrate && prisma db push && npx erd",
+    "postinstall": "prisma generate && prisma migrate && prisma db push && npm run erd",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
