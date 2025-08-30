@@ -16,8 +16,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// User model
-model User {
+// users model
+model users {
   id          Int      @id @default(autoincrement())
   name        String
   email       String   @unique
@@ -28,13 +28,13 @@ model User {
   isApproved  Boolean  @default(false)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-  messGroups  MessGroup[]
-  bookings    Booking[]
-  orders      Order[]
+  messGroups  mess_groups[]
+  bookings    bookings[]
+  orders      orders[]
 }
 
 // MessGroup model
-model MessGroup {
+model mess_groups {
   id             Int      @id @default(autoincrement())
   name           String
   description    String?
@@ -57,13 +57,13 @@ model MessGroup {
   rating         Int      @default(0)
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
-  owner          User     @relation(fields: [ownerId], references: [id])
-  bookings       Booking[]
-  orders         Order[]
+  owner          users     @relation(fields: [ownerId], references: [id])
+  bookings       bookings[]
+  orders         orders[]
 }
 
 // Booking model
-model Booking {
+model bookings {
   id          Int      @id @default(autoincrement())
   userId      Int
   messGroupId Int
@@ -75,25 +75,25 @@ model Booking {
   notes       String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-  user        User     @relation(fields: [userId], references: [id])
-  messGroup   MessGroup @relation(fields: [messGroupId], references: [id])
+  user        users     @relation(fields: [userId], references: [id])
+  messGroup   mess_groups @relation(fields: [messGroupId], references: [id])
 }
 
 // Order model
-model Order {
+model orders {
   id          Int      @id @default(autoincrement())
   userId      Int
   messGroupId Int
   roomType    String   @default("single")
   status      String   @default("pending")
   createdAt   DateTime @default(now())
-  user        User     @relation(fields: [userId], references: [id])
-  messGroup   MessGroup @relation(fields: [messGroupId], references: [id])
-  transactions Transaction[]
+  user        users     @relation(fields: [userId], references: [id])
+  messGroup   mess_groups @relation(fields: [messGroupId], references: [id])
+  transactions transactions[]
 }
 
 // Transaction model
-model Transaction {
+model transactions {
   id                   Int      @id @default(autoincrement())
   orderId              Int
   amount               Float
@@ -103,5 +103,5 @@ model Transaction {
   stripePaymentIntentId String?
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
-  order                Order    @relation(fields: [orderId], references: [id])
+  order                orders    @relation(fields: [orderId], references: [id])
 }

@@ -7,7 +7,7 @@ async function main() {
 
   // Insert sample users
   const users = await Promise.all([
-    prisma.user.create({
+    prisma.users.create({
       data: {
         name: 'Md. Rahman',
         email: 'rahman@example.com',
@@ -17,7 +17,7 @@ async function main() {
         isActive: true,
       },
     }),
-    prisma.user.create({
+    prisma.users.create({
       data: {
         name: 'Fatema Khatun',
         email: 'fatema@example.com',
@@ -27,7 +27,7 @@ async function main() {
         isActive: true,
       },
     }),
-    prisma.user.create({
+    prisma.users.create({
       data: {
         name: 'Karim Ahmed',
         email: 'karim@example.com',
@@ -37,7 +37,7 @@ async function main() {
         isActive: true,
       },
     }),
-    prisma.user.create({
+    prisma.users.create({
       data: {
         name: 'Nasir Uddin',
         email: 'nasir@example.com',
@@ -49,11 +49,11 @@ async function main() {
     }),
   ])
 
-  console.log('Users created:', users.length)
+  console.log('users created:', users.length)
 
   // Insert sample mess groups
   const messGroups = await Promise.all([
-    prisma.messGroup.create({
+    prisma.mess_groups.create({
       data: {
         name: 'Kornai Boys Mess 1',
         description: 'Clean and affordable mess for boys with home-cooked meals',
@@ -71,7 +71,7 @@ async function main() {
         isActive: true,
       },
     }),
-    prisma.messGroup.create({
+    prisma.mess_groups.create({
       data: {
         name: 'Kornai Boys Mess 2',
         description: 'Premium mess facility with modern amenities',
@@ -89,7 +89,7 @@ async function main() {
         isActive: true,
       },
     }),
-    prisma.messGroup.create({
+    prisma.mess_groups.create({
       data: {
         name: 'Mohabolipur Girls Mess 1',
         description: 'Safe and secure mess for girls with nutritious meals',
@@ -107,7 +107,7 @@ async function main() {
         isActive: true,
       },
     }),
-    prisma.messGroup.create({
+    prisma.mess_groups.create({
       data: {
         name: 'Mohabolipur Girls Mess 2',
         description: 'Comfortable living with all modern facilities',
@@ -125,7 +125,7 @@ async function main() {
         isActive: true,
       },
     }),
-    prisma.messGroup.create({
+    prisma.mess_groups.create({
       data: {
         name: 'BCS Gali Boys Mess 1',
         description: 'Budget-friendly mess near HSTU campus',
@@ -143,7 +143,7 @@ async function main() {
         isActive: true,
       },
     }),
-    prisma.messGroup.create({
+    prisma.mess_groups.create({
       data: {
         name: 'BCS Gali Boys Mess 2',
         description: 'Well-maintained mess with quality food',
@@ -161,7 +161,7 @@ async function main() {
         isActive: true,
       },
     }),
-    prisma.messGroup.create({
+    prisma.mess_groups.create({
       data: {
         name: 'Priom Building Girls Mess',
         description: 'Premium accommodation in Priom Building',
@@ -179,7 +179,7 @@ async function main() {
         isActive: true,
       },
     }),
-    prisma.messGroup.create({
+    prisma.mess_groups.create({
       data: {
         name: 'Priom Building Boys Mess',
         description: 'Modern mess facility in Priom Building',
